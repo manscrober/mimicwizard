@@ -145,6 +145,11 @@ ui <- tagList({
       icon = icon("users")
     ),
     menuItem(
+      "Patient timeline",
+      tabName = "patient_timeline",
+      icon = icon("chart line")
+    ),
+    menuItem(
       "Cohort creation",
       tabName = "cohort_creation",
       icon = icon("server")
@@ -414,6 +419,7 @@ ui <- tagList({
     tabItems(
       tabItem(tabName = "explore", parametersExplorationUI("parameters_exploration")),
       tabItem(tabName = "patient", patientExplorerUI("patient_explorer")),
+      tabItem(tabName = "patient_timeline", patientTimelineUI("patient_timeline")),
       tabItem(tabName = "cohort_creation", cohortCreationUI("cohort_creator")),
       tabItem(tabName = "cohort_explore", cohortExplorerUI("cohort_explorer")),
       tabItem(tabName = "dev_settings", devSettingsUI("dev_settings")),
@@ -747,6 +753,7 @@ server <- function(input, output, session) {
 
           parametersExplorationServer("parameters_exploration", isolate(session_db))
           patientExplorerServer("patient_explorer", isolate(session_db))
+          patientTimelineServer("patient_timeline", isolate(session_db))
           cohortCreationServer("cohort_creator", isolate(session_db))
           cohortExplorerServer("cohort_explorer", isolate(session_db))
           devSettingsServer("dev_settings", isolate(session_db))

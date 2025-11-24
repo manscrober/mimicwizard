@@ -33,6 +33,7 @@ cohortExplorerUI <- function(id) {
                uiOutput(ns("stratification_result"))
              ),style="min-height:50vh"),
              list(menu = "Cohort Patient Explorer", content = patientExplorerUI(ns("cohort_patient_explorer"))),
+             list(menu = "Patient Timeline", content = patientTimelineUI(ns("cohort_patient_timeline"))),
              list(menu = "Clinical Data Desc.", content = tagList(button(ns("reset_data_desc_button"), label = "Reset Data Desc.",class="green float-right mr-10"),clinicalDataDescUI(ns("clinical_data_desc"))))
            ),
          id = "tabset"

@@ -220,6 +220,11 @@ cohortExplorerServer <- function(id,
                                                          database,
                                                          input$cohort_picker)
       })
+      
+      # Use patient timeline as a module
+      observe({
+        patientTimelineInstance <- patientTimelineServer("cohort_patient_timeline", database, input$cohort_picker)
+      })
 
       allowed_target <- list(
         "inputevents" = c("amount", "rate"),

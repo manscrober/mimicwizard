@@ -32,10 +32,10 @@ IS_NOTE_LOADED <- FALSE
 
 # Database configuration for hosted/full MIMIC-IV Postgres database
 
-HOSTED_DBNAME = ""
-HOSTED_HOST = ""
-HOSTED_PORT = 
-HOSTED_USER = ""
+HOSTED_DBNAME = "mimiciv"
+HOSTED_HOST = "localhost"
+HOSTED_PORT = 5432
+HOSTED_USER = "postgres"
 HOSTED_PASSWORD = ""
 
 # Database configuration for local demo MIMIC-IV postgres database
